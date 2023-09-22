@@ -5,7 +5,7 @@
 
 
 ## Usages
-### 1- Scrapping leaderboard
+### 1- Scrapping leaderboard for specific region
 ```python
  # get top 500 players in euw and save
 players =  opgg_scrapper.get_top_N_players(500,driver , region='euw')
@@ -18,6 +18,7 @@ opgg_scrapper.create_dataframe_from_players(players).to_csv('players_euw.csv')
 #### Sample
 ![](screenshots/leader.png)
 ### 2- Scrapping games for specific player
+- Can force the scrapper to update using the force_update parameter
 ```python
  # get top 500 players in euw and save
 games = opgg_scrapper.get_player_N_games( player_name= "Δ Desperate" ,region='eune', driver_insance=driver , N=200 , force_update= False, force_ranked_only=True) 
@@ -38,7 +39,7 @@ driver = opgg_scrapper.get_chrome( headless=True , adblock_extenstion_path='exte
 ```
 
 
-### Example of analysis
+### Examples of analysis
 #### Top runes comparison in servers
 ![](screenshots/rune.png)
 
